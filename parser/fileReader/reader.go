@@ -3,7 +3,7 @@ package fileReader
 import (
 	"bufio"
 	"fmt"
-	"github.com/DavidZayer/parser/model"
+	"github.com/DavidZaya21/parser/model"
 	"github.com/fatih/color"
 	"log"
 	"os"
@@ -21,7 +21,6 @@ func FileReader(filename string) *os.File {
 	return file
 }
 
-// RawFileProcessing
 func RawFileProcessing(file *os.File) []*model.Node {
 	var nodes []*model.Node
 	scanner := bufio.NewScanner(file)
@@ -62,8 +61,8 @@ func RawDataToEdgeProcessing(file *os.File) []*model.Edge {
 			continue
 		} else {
 			foundEdges := &model.Edge{
-				FromNode:     parts[4],
-				ToNode:       parts[5],
+				FromNode:     parts[1],
+				ToNode:       parts[3],
 				RelationType: parts[6],
 			}
 			edges = append(edges, foundEdges)
@@ -73,9 +72,6 @@ func RawDataToEdgeProcessing(file *os.File) []*model.Edge {
 	return edges
 }
 
-// func EdgeDuplicationChecker(edges []*model.Edge) []*model.Edge {
-//
-// }
 func RemoveNodeDuplication(nodes []*model.Node) []*model.Node {
 	var nodeMap sync.Map
 	var nonDuplicatedNode []*model.Node

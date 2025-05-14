@@ -3,7 +3,7 @@ package cmd
 import (
 	context "context"
 	"fmt"
-	"github.com/SwanHtetAungPhyo/ClI/cassandra_client"
+	"github.com/DavidZayar/cli/cassandra_client"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"log"
