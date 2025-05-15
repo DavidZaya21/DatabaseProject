@@ -45,6 +45,8 @@ func init() {
 	cliName := "dbcli"
 	rootCmd.Flags().Bool(cliName, false, "Help for message")
 	mountingCmd()
+	QueryOneCmd.Flags().StringVarP(&queryOneNode, "from_node", "f", "", "Source node to find successors for")
+	_ = QueryOneCmd.MarkFlagRequired("from_node")
 }
 
 func mountingCmd() {

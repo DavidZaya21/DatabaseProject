@@ -9,8 +9,7 @@ run-parse:
 	@go run ../parser/main.go
 query-one:
 	@echo "finding the successor of the given node"
-	@$(OUTPUT) one
-
+	@$(OUTPUT) one -f="/c/en/steam_locomotive"
 query-two:
 	@echo "finding the successor of the given node"
 	@$(OUTPUT) two
