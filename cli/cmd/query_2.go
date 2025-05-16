@@ -5,6 +5,7 @@ import (
 	"log"
 	"runtime"
 	"runtime/debug"
+	"strings"
 	"syscall"
 	"time"
 
@@ -13,9 +14,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var queryTwoTemplate = `
-SELECT to_node FROM edges WHERE from_node = '/c/en/value' ALLOW FILTERING;
-`
+var (
+	queryTwoFromNode string
+)
+
+//var queryTwoTemplate = `
+//SELECT to_node FROM edges WHERE from_node = '/c/en/value' ALLOW FILTERING;
+//`
 
 var QueryTwoCmd = &cobra.Command{
 	Use:     "two",
@@ -38,13 +43,14 @@ func QueryTwoAction() {
 	var memStart runtime.MemStats
 	runtime.ReadMemStats(&memStart)
 
+	queryTwoTemplate := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", queryTwoFromNode)
 	iter := session.Query(queryTwoTemplate).Iter()
 	var toNode string
 	uniqueMap := make(map[string]bool)
 	skipped := 0
 
 	for iter.Scan(&toNode) {
-		if toNode != "/c/en/value" {
+		if !strings.EqualFold(toNode, queryTwoFromNode) {
 			fmt.Printf("successors: %s \n", toNode)
 			uniqueMap[toNode] = true
 		} else {

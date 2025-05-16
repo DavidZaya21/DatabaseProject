@@ -47,6 +47,12 @@ func init() {
 	mountingCmd()
 	QueryOneCmd.Flags().StringVarP(&queryOneNode, "from_node", "f", "", "Source node to find successors for")
 	_ = QueryOneCmd.MarkFlagRequired("from_node")
+	QueryTwoCmd.Flags().StringVarP(&queryTwoFromNode, "from_node", "f", "", "Count all the successors of given node")
+	_ = QueryTwoCmd.MarkFlagRequired("from_node")
+	QueryThreeCmd.Flags().StringVarP(&queryThreeNode, "to_node", "f", "", "Find all predecessors of a given node")
+	_ = QueryThreeCmd.MarkFlagRequired("to_node")
+	QueryFourCmd.Flags().StringVarP(&queryFourNode, "to_node", "f", "", "Count all the predecessors of given node")
+	_ = QueryFourCmd.MarkFlagRequired("to_node")
 }
 
 func mountingCmd() {

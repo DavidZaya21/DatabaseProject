@@ -31,7 +31,7 @@ func QueryOneAction() {
 		log.Fatal("❌ You must provide a --from_node value")
 	}
 
-	query := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s' ALLOW FILTERING;", queryOneNode)
+	query := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", queryOneNode)
 
 	color.Yellow("Creating the Session")
 	session := cassandra_client.GetSession()

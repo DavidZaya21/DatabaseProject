@@ -11,16 +11,16 @@ query-one:
 	@echo "finding the successor of the given node"
 	@$(OUTPUT) one -f="/c/en/steam_locomotive"
 query-two:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) two
+	@echo "Counting the successor of the given node"
+	@$(OUTPUT) two -f="/c/en/value"
 
 query-three:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) three
+	@echo "finding the predecessors of the given node"
+	@$(OUTPUT) three -f="Q40157"
 
 query-four:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) four
+	@echo "Counting all the Predecessors of the given node"
+	@$(OUTPUT) four -f="/c/en/country"
 
 query-five:
 	@echo "finding the successor of the given node"
