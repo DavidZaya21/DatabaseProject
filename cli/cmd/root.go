@@ -45,14 +45,22 @@ func init() {
 	cliName := "dbcli"
 	rootCmd.Flags().Bool(cliName, false, "Help for message")
 	mountingCmd()
-	QueryOneCmd.Flags().StringVarP(&queryOneNode, "from_node", "f", "", "Source node to find successors for")
+	QueryOneCmd.Flags().StringVarP(&QueryOneNode, "from_node", "f", "", "Source node to find successors for")
 	_ = QueryOneCmd.MarkFlagRequired("from_node")
-	QueryTwoCmd.Flags().StringVarP(&queryTwoFromNode, "from_node", "f", "", "Count all the successors of given node")
+	QueryTwoCmd.Flags().StringVarP(&QueryTwoFromNode, "from_node", "f", "", "Count all the successors of given node")
 	_ = QueryTwoCmd.MarkFlagRequired("from_node")
-	QueryThreeCmd.Flags().StringVarP(&queryThreeNode, "to_node", "f", "", "Find all predecessors of a given node")
+	QueryThreeCmd.Flags().StringVarP(&QueryThreeNode, "to_node", "f", "", "Find all predecessors of a given node")
 	_ = QueryThreeCmd.MarkFlagRequired("to_node")
-	QueryFourCmd.Flags().StringVarP(&queryFourNode, "to_node", "f", "", "Count all the predecessors of given node")
+	QueryFourCmd.Flags().StringVarP(&QueryFourNode, "to_node", "f", "", "Count all the predecessors of given node")
 	_ = QueryFourCmd.MarkFlagRequired("to_node")
+	QueryFiveCmd.Flags().StringVarP(&QueryFiveNode, "node", "f", "", "Find all neighbors of given node")
+	_ = QueryFiveCmd.MarkFlagRequired("node")
+	QuerySixCmd.Flags().StringVarP(&QuerySixNode, "node", "f", "", "Count all neighbors of given node")
+	_ = QuerySixCmd.MarkFlagRequired("node")
+	QuerySevenCmd.Flags().StringVarP(&QuerySevenNode, "node", "f", "", "Find all grandchildren of given node")
+	_ = QuerySevenCmd.MarkFlagRequired("node")
+	QueryEightCmd.Flags().StringVarP(&QueryEightNode, "node", "f", "", "Find all grandparents of given node")
+	_ = QueryEightCmd.MarkFlagRequired("node")
 }
 
 func mountingCmd() {

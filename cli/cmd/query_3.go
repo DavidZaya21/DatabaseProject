@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	queryThreeNode string
+	QueryThreeNode string
 	QueryThreeCmd  = &cobra.Command{
 		Use:     "three",
 		Aliases: []string{"three"},
@@ -26,11 +26,11 @@ var (
 )
 
 func QueryThreeAction() {
-	if queryThreeNode == "" {
+	if QueryThreeNode == "" {
 		log.Fatal("❌ You must provide a --to_node value")
 	}
 
-	query := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering ;", queryThreeNode)
+	query := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering ;", QueryThreeNode)
 
 	color.Yellow("Creating the Session")
 	session := cassandra_client.GetSession()

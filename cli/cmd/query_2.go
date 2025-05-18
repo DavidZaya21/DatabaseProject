@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	queryTwoFromNode string
+	QueryTwoFromNode string
 )
 
 //var queryTwoTemplate = `
@@ -43,14 +43,14 @@ func QueryTwoAction() {
 	var memStart runtime.MemStats
 	runtime.ReadMemStats(&memStart)
 
-	queryTwoTemplate := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", queryTwoFromNode)
+	queryTwoTemplate := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", QueryTwoFromNode)
 	iter := session.Query(queryTwoTemplate).Iter()
 	var toNode string
 	uniqueMap := make(map[string]bool)
 	skipped := 0
 
 	for iter.Scan(&toNode) {
-		if !strings.EqualFold(toNode, queryTwoFromNode) {
+		if !strings.EqualFold(toNode, QueryTwoFromNode) {
 			fmt.Printf("successors: %s \n", toNode)
 			uniqueMap[toNode] = true
 		} else {

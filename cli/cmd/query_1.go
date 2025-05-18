@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	queryOneNode string
+	QueryOneNode string
 	QueryOneCmd  = &cobra.Command{
 		Use:     "one",
 		Aliases: []string{"one"},
@@ -27,11 +27,11 @@ var (
 )
 
 func QueryOneAction() {
-	if queryOneNode == "" {
+	if QueryOneNode == "" {
 		log.Fatal("❌ You must provide a --from_node value")
 	}
 
-	query := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", queryOneNode)
+	query := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", QueryOneNode)
 
 	color.Yellow("Creating the Session")
 	session := cassandra_client.GetSession()
@@ -49,8 +49,8 @@ func QueryOneAction() {
 	var count, skipped int
 
 	for iter.Scan(&toNode) {
-		if !strings.EqualFold(toNode, queryOneNode) {
-			color.Green(fmt.Sprintf("Successors of %s : %s ", queryOneNode, toNode))
+		if !strings.EqualFold(toNode, QueryOneNode) {
+			color.Green(fmt.Sprintf("Successors of %s : %s ", QueryOneNode, toNode))
 			count++
 		} else {
 			skipped++

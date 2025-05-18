@@ -23,20 +23,20 @@ query-four:
 	@$(OUTPUT) four -f="/c/en/country"
 
 query-five:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) five
+	@echo "finding all neighbors of given node"
+	@$(OUTPUT) five -f="/c/en/spectrogram"
 
 query-six:
 	@echo "finding the successor of the given node"
-	@$(OUTPUT) six
+	@$(OUTPUT) six -f="/c/en/jar"
 
 query-seven:
 	@echo "finding the successor of the given node"
-	@$(OUTPUT) seven
+	@$(OUTPUT) seven -f="Q676"
 
 query-eight:
 	@echo "finding the successor of the given node"
-	@$(OUTPUT) eight
+	@$(OUTPUT) eight -f="/c/en/ms_dos"
 
 query-nine:
 	@echo "finding the successor of the given node"

@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	queryFourNode string
+	QueryFourNode string
 	QueryFourCmd  = &cobra.Command{
 		Use:     "four",
 		Aliases: []string{"four"},
@@ -27,7 +27,7 @@ var (
 
 func QueryFourAction() {
 	// TODO: implement query 4
-	if queryFourNode == "" {
+	if QueryFourNode == "" {
 		log.Fatal("❌ You must provide a --to_node value")
 	}
 
@@ -42,14 +42,14 @@ func QueryFourAction() {
 	var memStart runtime.MemStats
 	runtime.ReadMemStats(&memStart)
 
-	queryFourTemplate := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering;", queryFourNode)
+	queryFourTemplate := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering;", QueryFourNode)
 	iter := session.Query(queryFourTemplate).Iter()
 	var fromNode string
 	uniqueMap := make(map[string]bool)
 	//skipped := 0
 
 	for iter.Scan(&fromNode) {
-		//if !strings.EqualFold(fromNode, queryFourNode) {
+		//if !strings.EqualFold(fromNode, QueryFourNode) {
 		fmt.Printf("Predecessors: %s \n", fromNode)
 		uniqueMap[fromNode] = true
 		//} else {
