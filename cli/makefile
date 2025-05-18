@@ -39,15 +39,15 @@ query-eight:
 	@$(OUTPUT) eight -f="/c/en/ms_dos"
 
 query-nine:
-	@echo "finding the successor of the given node"
+	@echo "Counting the total number of nodes"
 	@$(OUTPUT) nine
 
 query-ten:
-	@echo "finding the successor of the given node"
+	@echo "Counting all the nodes without successors"
 	@$(OUTPUT) ten
 
 query-eleven:
-	@echo "finding the successor of the given node"
+	@echo "Counting all the nodes without predecessors"
 	@$(OUTPUT) eleven
 
 query-twelve:
