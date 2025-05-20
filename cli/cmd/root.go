@@ -61,6 +61,12 @@ func init() {
 	_ = QuerySevenCmd.MarkFlagRequired("node")
 	QueryEightCmd.Flags().StringVarP(&QueryEightNode, "node", "f", "", "Find all grandparents of given node")
 	_ = QueryEightCmd.MarkFlagRequired("node")
+	QueryFourteenCmd.Flags().StringVarP(&QueryFourteenOldName, "old name", "o", "", "Old node name (e.g., /c/en/transportation_topic/n)")
+	QueryFourteenCmd.Flags().StringVarP(&QueryFourteenNewName, "new name", "n", "", "New node name (e.g., /c/en/movement_topic/n)")
+	_ = QueryFourteenCmd.MarkFlagRequired("old name")
+	_ = QueryFourteenCmd.MarkFlagRequired("mew name")
+	QueryFifteenCmd.Flags().StringVarP(&QueryFifteenNode, "node", "f", "", "Find all similar nodes of given node")
+	_ = QueryFifteenCmd.MarkFlagRequired("node")
 }
 
 func mountingCmd() {

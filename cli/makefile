@@ -51,20 +51,20 @@ query-eleven:
 	@$(OUTPUT) eleven
 
 query-twelve:
-	@echo "finding the successor of the given node"
+	@echo "Finding the node with the most neighbors"
 	@$(OUTPUT) twelve
 
 query-thirteen:
-	@echo "finding the successor of the given node"
+	@echo "Counting the nodes with a single neighbor"
 	@$(OUTPUT) thirteen
 
 query-fourteen:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) fourteen
+	@echo "Rename the given node"
+	@$(OUTPUT) fourteen -o="/c/en/transportation_topic/n" -n="/c/en/movement_topic/n"
 
 query-fifteen:
-	@echo "finding the successor of the given node"
-	@$(OUTPUT) fifteen
+	@echo "Finding similar nodes for given node"
+	@$(OUTPUT) fifteen -f="/c/en/emission_nebula"
 
 query-sixteen:
 	@echo "finding the successor of the given node"
