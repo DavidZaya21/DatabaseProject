@@ -1,0 +1,35 @@
+
+services:
+  cassandra:
+    image: cassandra:4.1
+    container_name: cassandra-container
+    ports:
+      - "9042:9042"
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+      - ./cassandra.yaml:/etc/cassandra/cassandra.yaml
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Test Cluster
+      - CASSANDRA_LISTEN_ADDRESS=auto
+      - CASSANDRA_BROADCAST_ADDRESS=localhost
+      - CASSANDRA_RPC_ADDRESS=0.0.0.0
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=localhost
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
+      - CASSANDRA_START_RPC=true
+
+
+    networks:
+      - app-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "cqlsh", "-e", "DESCRIBE KEYSPACES"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  cassandra-data:
+
+networks:
+  app-network:
+    driver: bridge

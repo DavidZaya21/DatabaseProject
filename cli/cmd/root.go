@@ -45,6 +45,12 @@ func init() {
 	cliName := "dbcli"
 	rootCmd.Flags().Bool(cliName, false, "Help for message")
 	mountingCmd()
+	QueryOneCmd.Flags().StringVarP(&from_node, "value", "v", "", "The 'from_node' value to query")
+	err := QueryOneCmd.MarkFlagRequired("value")
+	if err != nil {
+		color.Red(err.Error())
+		return
+	}
 }
 
 func mountingCmd() {

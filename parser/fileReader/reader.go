@@ -11,7 +11,7 @@ import (
 	"sync"
 )
 
-var filePath = "/Users/davidzayar/databaseProject/cskg.tsv"
+var filePath = "/Users/swanhtet1aungphyo/Downloads/cskg.tsv"
 
 func FileReader(filename string) *os.File {
 	file, err := os.Open(filename)
