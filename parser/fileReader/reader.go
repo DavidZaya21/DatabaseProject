@@ -48,7 +48,6 @@ func RawFileProcessing(file *os.File) []*model.Node {
 	return nodes
 }
 
-// TODO: Edge processing
 func RawDataToEdgeProcessing(file *os.File) []*model.Edge {
 	var edges []*model.Edge
 	scanner := bufio.NewScanner(file)
