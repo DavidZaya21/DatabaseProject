@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/cli/cmd/query_1.go" dialect="CassandraQL" />
+    <file url="file://$PROJECT_DIR$/cli/cmd/query_14.go" dialect="CassandraQL" />
     <file url="file://$PROJECT_DIR$/parser/main.go" dialect="CassandraQL" />
     <file url="file://$PROJECT_DIR$/query.sql" dialect="CassandraQL" />
   </component>

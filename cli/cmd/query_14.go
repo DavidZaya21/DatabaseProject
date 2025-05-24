@@ -25,7 +25,6 @@ var (
 )
 
 func QueryFourteenAction() {
-	// TODO: implement query 14
 	if QueryFourteenOldName == "" || QueryFourteenNewName == "" {
 		log.Fatal("❌ You must provide --oldname and --newname flags")
 	}
@@ -92,7 +91,6 @@ func QueryFourteenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 
-	// For throughput, since this is a rename with basically 1 logical operation, set as 1/duration in seconds
 	throughput := 1.0 / duration.Seconds()
 
 	color.Green("✅ Node renamed from %s to %s", oldName, newName)

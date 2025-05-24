@@ -1,0 +1,6 @@
+Finding shortest path between two nodes
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
+✅ Connected to Cassandra
+Shortest path length: 4
+Path: /c/en/steam_locomotive -> /c/en/locomotive/n -> /c/en/economics -> /c/en/money -> /c/en/value
