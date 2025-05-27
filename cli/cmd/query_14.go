@@ -1,14 +1,17 @@
 package cmd
 
 import (
-	"github.com/DavidZayar/cli/cassandra_client"
-	"github.com/fatih/color"
-	"github.com/spf13/cobra"
+	"fmt"
 	"log"
 	"runtime"
 	"runtime/debug"
+	"strings"
 	"syscall"
 	"time"
+
+	"github.com/DavidZayar/cli/cassandra_client"
+	"github.com/fatih/color"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -75,6 +78,39 @@ func QueryFourteenAction() {
 	err = session.Query(`DELETE FROM node WHERE name = ?`, QueryFourteenOldName).Exec()
 	if err != nil {
 		log.Fatalf("❌ Failed to delete old node: %v", err)
+	}
+
+	query := fmt.Sprintf("SELECT to_node FROM edges WHERE from_node = '%s';", newName)
+
+	iter := session.Query(query).Iter()
+	var toNode string
+	var count, skipped int
+
+	for iter.Scan(&toNode) {
+		if !strings.EqualFold(toNode, QueryOneNode) {
+			color.Green(fmt.Sprintf("Successors of %s : %s ", newName, toNode))
+			count++
+		} else {
+			skipped++
+		}
+	}
+
+	if err := iter.Close(); err != nil {
+		log.Fatalf("❌ Error reading results: %v", err)
+	}
+
+	query = fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering ;", newName)
+
+	iter = session.Query(query).Iter()
+	var fromNode string
+	uniqueMap := make(map[string]bool)
+	for iter.Scan(&fromNode) {
+		fmt.Printf("Predecessors: %s \n", fromNode)
+		uniqueMap[fromNode] = true
+	}
+
+	if err := iter.Close(); err != nil {
+		log.Fatalf("❌ Error reading results: %v", err)
 	}
 
 	endTime := time.Now()

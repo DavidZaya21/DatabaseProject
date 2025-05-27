@@ -1,5 +1,0 @@
-✅ .env file loaded
-Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
-✅ Connected to Cassandra
-Creating the Session
-2025/05/23 01:43:47 ❌ Error reading results: Operation failed - received 0 responses and 1 failures: UNKNOWN from localhost/127.0.0.1:7000

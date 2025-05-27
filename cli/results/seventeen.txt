@@ -1,0 +1,16 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
+✅ Connected to Cassandra
+Distant synonyms of /c/en/defeatable at distance 2:
+- /c/en/conquerable (path: /c/en/defeatable -> /c/en/vincible/a -> /c/en/conquerable)
+- /c/en/weak (path: /c/en/defeatable -> /c/en/vincible/a -> /c/en/weak)
+- /c/en/surmountable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/surmountable)
+- /c/en/beatable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/beatable)
+- /c/en/subduable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/subduable)
+- /c/en/subjugable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/subjugable)
+- /c/en/surmountable/a (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/surmountable/a)
+- /c/en/vincible (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/vincible)
+- /c/en/superable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/superable)
+- /c/en/vanquishable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/vanquishable)
+- /c/en/attainable (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/attainable)
+- /c/en/possible (path: /c/en/defeatable -> /c/en/insurmountable -> /c/en/possible)

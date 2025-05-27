@@ -5,6 +5,7 @@ go 1.24
 require (
 	github.com/fatih/color v1.18.0
 	github.com/gocql/gocql v1.7.0
+	github.com/google/uuid v1.6.0
 	github.com/joho/godotenv v1.5.1
 	github.com/spf13/cobra v1.9.1
 )

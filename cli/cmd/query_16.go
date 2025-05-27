@@ -89,22 +89,11 @@ func findShortestPath(session *gocql.Session, fromNode, toNode string) ([]string
 // Get all neighbors of a node (undirected graph)
 func getNeighbors(session *gocql.Session, node string) []string {
 	var neighbors []string
-
-	// Query edges where node is from_node
-	iter := session.Query("SELECT to_node FROM edges WHERE from_node = ?", node).Iter()
+	iter := session.Query("SELECT to_node FROM edges_bidirectional WHERE from_node = ?", node).Iter()
 	var toNode string
 	for iter.Scan(&toNode) {
 		neighbors = append(neighbors, toNode)
 	}
 	iter.Close()
-
-	// Query edges where node is to_node (for undirected graph)
-	iter = session.Query("SELECT from_node FROM edges WHERE to_node = ?", node).Iter()
-	var fromNode string
-	for iter.Scan(&fromNode) {
-		neighbors = append(neighbors, fromNode)
-	}
-	iter.Close()
-
 	return neighbors
 }

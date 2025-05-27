@@ -1,0 +1,11 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
+✅ Connected to Cassandra
+Successors of /c/en/movement_topic/n : /c/en/events_and_scripts_topic/n 
+Predecessors: /c/en/transportation_topic/n 
+✅ Node renamed from /c/en/transportation_topic/n to /c/en/movement_topic/n
+⏱️  Wall Time: 2.774841375s
+⚙️  CPU Time (User): 1.386ms | (Sys): 2.28ms
+🧠 Memory Used: 67.16 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 0.36 ops/sec

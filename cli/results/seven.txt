@@ -1,0 +1,23 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+✅ Grandchildren query completed successfully.
+Grandchildren: 
+Q621993 
+Q1437361 
+Q47461344 
+Q2217301 
+Q17537576 
+Q1194480 
+Q1792379 
+Q483394 
+Q223393 
+Q17518870 
+Q4263830 
+📌 Unique grandchildren of Q676: 11 | Skipped: 2
+⏱️  Wall Time: 10.205167ms
+⚙️  CPU Time (User): 310µs | (Sys): 641µs
+🧠 Memory Used: 40.20 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 1077.89 rows/sec

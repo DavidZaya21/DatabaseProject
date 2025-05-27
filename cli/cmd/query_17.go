@@ -21,11 +21,11 @@ var (
 	}
 )
 
-type RelationType int
+// type RelationType 
 
 const (
-	Synonym RelationType = iota
-	Antonym
+	Synonym = "synonym"
+	Antonym = "antonym"
 )
 
 type PathResult struct {
@@ -75,7 +75,7 @@ func findDistantSynonyms(session *gocql.Session, startNode string, targetDistanc
 		Node         string
 		Distance     int
 		Path         []string
-		RelationType RelationType
+		RelationType string
 	}
 
 	visited := make(map[string]map[int]bool) // node -> distance -> visited
@@ -100,8 +100,8 @@ func findDistantSynonyms(session *gocql.Session, startNode string, targetDistanc
 		}
 
 		// Get synonym and antonym neighbors
-		synonymNeighbors := getSynonymAntonymNeighborsQ17(session, current.Node, "/r/Synonym")
-		antonymNeighbors := getSynonymAntonymNeighborsQ17(session, current.Node, "/r/Antonym")
+		synonymNeighbors := getSynonymAntonymNeighborsQ17(session, current.Node, "synonym")
+		antonymNeighbors := getSynonymAntonymNeighborsQ17(session, current.Node, "antonym")
 
 		// Process synonym neighbors
 		for _, neighbor := range synonymNeighbors {
@@ -134,7 +134,7 @@ func findDistantSynonyms(session *gocql.Session, startNode string, targetDistanc
 				newPath = append(newPath, neighbor)
 
 				// Antonym flips the relation type
-				var newRelationType RelationType
+				var newRelationType string
 				if current.RelationType == Synonym {
 					newRelationType = Antonym
 				} else {
@@ -159,18 +159,18 @@ func getSynonymAntonymNeighborsQ17(session *gocql.Session, node, relation string
 	var neighbors []string
 
 	// Query edges where node is from_node
-	iter := session.Query("SELECT to_node FROM edges WHERE from_node = ? AND relation = ?", node, relation).Iter()
-	var toNode string
-	for iter.Scan(&toNode) {
-		neighbors = append(neighbors, toNode)
+	iter := session.Query("SELECT from_node FROM edges WHERE to_node = ? AND relation = ? allow filtering", node, relation).Iter()
+	var fromNode string
+	for iter.Scan(&fromNode) {
+		neighbors = append(neighbors, fromNode)
 	}
 	iter.Close()
 
 	// Query edges where node is to_node (for undirected graph)
-	iter = session.Query("SELECT from_node FROM edges WHERE to_node = ? AND relation = ?", node, relation).Iter()
-	var fromNode string
-	for iter.Scan(&fromNode) {
-		neighbors = append(neighbors, fromNode)
+	iter = session.Query("SELECT to_node FROM edges WHERE from_node = ? AND relation = ?", node, relation).Iter()
+	var toNode string
+	for iter.Scan(&toNode) {
+		neighbors = append(neighbors, toNode)
 	}
 	iter.Close()
 

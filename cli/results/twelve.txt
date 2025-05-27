@@ -1,0 +1,13 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+✅ Query completed successfully.
+📌 Max unique neighbor count: 11037
+🌐 Nodes with the most neighbors:
+/c/en/slang
+⏱️  Wall Time: 17.560404166s
+⚙️  CPU Time (User): 9.531261s | (Sys): 1.861007s
+🧠 Memory Used: 1209742.45 KB
+🧹 GC Pause: 1.55 ms
+📈 Throughput: 122958.16 nodes/sec
