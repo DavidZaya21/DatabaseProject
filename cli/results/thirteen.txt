@@ -4,8 +4,8 @@ Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 🔌 Creating the Session
 ✅ Query completed successfully.
 📌 Nodes with exactly 1 unique neighbor: 1276217
-⏱️  Wall Time: 16.707132208s
-⚙️  CPU Time (User): 9.297356s | (Sys): 1.535302s
-🧠 Memory Used: 1229837.49 KB
-🧹 GC Pause: 1.23 ms
-📈 Throughput: 76387.56 nodes/sec
+⏱️  Wall Time: 17.121986917s
+⚙️  CPU Time (User): 9.410423s | (Sys): 1.663342s
+🧠 Memory Used: 1216344.34 KB
+🧹 GC Pause: 1.33 ms
+📈 Throughput: 74536.73 nodes/sec

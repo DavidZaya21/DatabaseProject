@@ -51,7 +51,7 @@ func QueryTwoAction() {
 
 	for iter.Scan(&toNode) {
 		if !strings.EqualFold(toNode, QueryTwoFromNode) {
-			fmt.Printf("successors: %s \n", toNode)
+			// fmt.Printf("successors: %s \n", toNode)
 			uniqueMap[toNode] = true
 		} else {
 			skipped++

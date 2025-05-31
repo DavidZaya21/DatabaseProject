@@ -1,5 +1,11 @@
 ✅ .env file loaded
 Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 ✅ Connected to Cassandra
-Shortest path length: 7
-Path: /c/en/uchuva -> /c/en/tomatillo/n -> /c/en/physalis -> /c/en/plant/n -> /c/en/slang -> /c/en/square/a -> /c/en/square_sail -> /c/en/square_sails/n
+✅ Shortest path found
+🔗 Length: 7
+🛣️  Path: /c/en/uchuva -> /c/en/tomatillo/n -> /c/en/physalis -> /c/en/plant/n -> /c/en/slang -> /c/en/square/a -> /c/en/square_sail -> /c/en/square_sails/n
+⏱️  Wall Time: 5m10.118426625s
+⚙️  CPU Time (User): 22.957788s | (Sys): 36.676017s
+🧠 Memory Used: 644435.36 KB
+🧹 GC Pause: 4.45 ms
+📈 Nodes Visited: 1407472 | Throughput: 4538.50 nodes/sec

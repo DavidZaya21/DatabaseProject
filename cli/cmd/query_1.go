@@ -5,7 +5,8 @@ import (
 	"log"
 	"runtime"
 	"runtime/debug"
-	"strings"
+
+	// "strings"
 	"syscall"
 	"time"
 
@@ -37,7 +38,7 @@ func QueryOneAction() {
 	session := cassandra_client.GetSession()
 	defer session.Close()
 
-	var startTime = time.Now()
+	startTime := time.Now()
 	var rusageStart syscall.Rusage
 	_ = syscall.Getrusage(syscall.RUSAGE_SELF, &rusageStart)
 
@@ -46,14 +47,13 @@ func QueryOneAction() {
 
 	iter := session.Query(query).Iter()
 	var toNode string
-	var count, skipped int
+	uniqueMap := make(map[string]bool)
 
+	count := 0
 	for iter.Scan(&toNode) {
-		if !strings.EqualFold(toNode, QueryOneNode) {
-			color.Green(fmt.Sprintf("Successors of %s : %s ", QueryOneNode, toNode))
+		if !uniqueMap[toNode] {
+			uniqueMap[toNode] = true
 			count++
-		} else {
-			skipped++
 		}
 	}
 
@@ -61,8 +61,7 @@ func QueryOneAction() {
 		log.Fatalf("❌ Error reading results: %v", err)
 	}
 
-	// Post-query profiling
-	var endTime = time.Now()
+	endTime := time.Now()
 	var rusageEnd syscall.Rusage
 	_ = syscall.Getrusage(syscall.RUSAGE_SELF, &rusageEnd)
 
@@ -77,15 +76,20 @@ func QueryOneAction() {
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(count) / duration.Seconds()
 
+	// Output successors
+	color.White("Successors of node '%s':", QueryOneNode)
+	for node := range uniqueMap {
+		color.Green("%s", node)
+	}
+
 	// Results output
 	color.Green("✅ Query completed successfully.")
-	color.Cyan("📌 Rows matched: %d | Skipped: %d", count, skipped)
+	color.Cyan("📌 Successors found: %d", count)
 	color.Yellow("⏱️  Wall Time: %s", duration)
 	color.Yellow("⚙️  CPU Time (User): %s | (Sys): %s", cpuUserTime, cpuSysTime)
 	color.Magenta("🧠 Memory Used: %.2f KB", float64(memUsed)/1024)
 	color.Blue("🧹 GC Pause: %.2f ms", float64(gcPauseNs)/1e6)
 	color.Cyan("📈 Throughput: %.2f rows/sec", throughput)
 
-	// Optional: Show memory stats summary (for advanced diagnostics)
 	debug.FreeOSMemory()
 }

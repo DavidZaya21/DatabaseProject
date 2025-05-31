@@ -4,8 +4,8 @@ Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 🔌 Creating the Session
 ✅ Node count query completed successfully.
 📌 Total nodes: 2160968
-⏱️  Wall Time: 7.030788875s
-⚙️  CPU Time (User): 290.145ms | (Sys): 94.2ms
-🧠 Memory Used: 1071.77 KB
-🧹 GC Pause: 3.10 ms
-📈 Throughput: 307357.83 rows/sec
+⏱️  Wall Time: 8.025348209s
+⚙️  CPU Time (User): 294.966ms | (Sys): 94.537ms
+🧠 Memory Used: 2393.97 KB
+🧹 GC Pause: 2.94 ms
+📈 Throughput: 269267.82 rows/sec

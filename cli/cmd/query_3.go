@@ -47,10 +47,9 @@ func QueryThreeAction() {
 	var fromNode string
 	uniqueMap := make(map[string]bool)
 	for iter.Scan(&fromNode) {
-		fmt.Printf("Predecessors: %s \n", fromNode)
+		// fmt.Printf("Predecessors: %s \n", fromNode)
 		uniqueMap[fromNode] = true
 	}
-
 	//for iter.Scan(&fromNode) {
 	//	if !strings.EqualFold(fromNode, queryThreeNode) {
 	//		color.Green(fmt.Sprintf("Successors of %s : %s ", queryThreeNode, fromNode))
@@ -62,6 +61,20 @@ func QueryThreeAction() {
 
 	if err := iter.Close(); err != nil {
 		log.Fatalf("❌ Error reading results: %v", err)
+	}
+
+	for prede := range uniqueMap {
+		var label string
+		query := fmt.Sprintf("SELECT label FROM node WHERE name = '%s';", prede)
+		iter := session.Query(query).Iter()
+
+		for iter.Scan(&label) {
+			fmt.Printf("Node: %s, Label: %s\n", prede, label)
+		}
+
+		if err := iter.Close(); err != nil {
+			log.Printf("Query error for child %s: %v", prede, err)
+		}
 	}
 
 	finalCount := len(uniqueMap)

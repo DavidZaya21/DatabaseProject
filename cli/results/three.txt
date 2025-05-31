@@ -2,16 +2,15 @@
 Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 ✅ Connected to Cassandra
 Creating the Session
-Predecessors: Q839679 
-Predecessors: Q42278 
-Predecessors: Q12047003 
-Predecessors: Q119306 
-Predecessors: Q119306 
-Predecessors: Q10536135 
+Node: Q10536135, Label: the floor is lava
+Node: Q839679, Label: lava lamp
+Node: Q42278, Label: magma
+Node: Q12047003, Label: primary magma
+Node: Q119306, Label: lava lake
 ✅ Query completed successfully.
 📌 Unique predecessors (from_node): 5
-⏱️  Wall Time: 4.358455417s
-⚙️  CPU Time (User): 559µs | (Sys): 1.258ms
-🧠 Memory Used: 31.84 KB
+⏱️  Wall Time: 2.766940333s
+⚙️  CPU Time (User): 866µs | (Sys): 1.709ms
+🧠 Memory Used: 58.86 KB
 🧹 GC Pause: 0.00 ms
-📈 Throughput: 1.15 rows/sec
+📈 Throughput: 1.81 rows/sec

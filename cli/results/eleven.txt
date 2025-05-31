@@ -3,9 +3,9 @@ Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 ✅ Connected to Cassandra
 🔌 Creating the Session
 ✅ Query completed successfully.
-Nodes without successors: 1129780
-⏱️  Wall Time: 20.367955875s
-⚙️  CPU Time (User): 3.522388s | (Sys): 632.502ms
-🧠 Memory Used: 259090.84 KB
-🧹 GC Pause: 1.44 ms
-📈 Throughput: 55468.50 rows/sec
+Nodes without successors: 1129781
+⏱️  Wall Time: 22.304491917s
+⚙️  CPU Time (User): 3.901693s | (Sys): 655.425ms
+🧠 Memory Used: 175268.28 KB
+🧹 GC Pause: 1.51 ms
+📈 Throughput: 50652.62 rows/sec

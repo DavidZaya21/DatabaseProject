@@ -6,8 +6,8 @@ Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 🔍 Querying predecessors...
 ✅ Neighbor query completed successfully.
 📌 Total unique neighbors: 373 | Skipped: 0
-⏱️  Wall Time: 4.399698667s
-⚙️  CPU Time (User): 972µs | (Sys): 1.72ms
-🧠 Memory Used: 74.42 KB
+⏱️  Wall Time: 2.141008208s
+⚙️  CPU Time (User): 1.203ms | (Sys): 1.95ms
+🧠 Memory Used: 75.27 KB
 🧹 GC Pause: 0.00 ms
-📈 Throughput: 84.78 rows/sec
+📈 Throughput: 174.22 rows/sec

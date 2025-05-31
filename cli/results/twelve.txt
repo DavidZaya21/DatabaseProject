@@ -6,8 +6,8 @@ Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 📌 Max unique neighbor count: 11037
 🌐 Nodes with the most neighbors:
 /c/en/slang
-⏱️  Wall Time: 17.560404166s
-⚙️  CPU Time (User): 9.531261s | (Sys): 1.861007s
-🧠 Memory Used: 1209742.45 KB
-🧹 GC Pause: 1.55 ms
-📈 Throughput: 122958.16 nodes/sec
+⏱️  Wall Time: 20.38683925s
+⚙️  CPU Time (User): 9.682803s | (Sys): 3.25127s
+🧠 Memory Used: 1229568.84 KB
+🧹 GC Pause: 2.45 ms
+📈 Throughput: 105911.22 nodes/sec

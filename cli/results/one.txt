@@ -2,13 +2,14 @@
 Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 ✅ Connected to Cassandra
 Creating the Session
-Successors of /c/en/steam_locomotive : /c/en/locomotive/n 
-Successors of /c/en/steam_locomotive : /c/en/steam/n 
-Successors of /c/en/steam_locomotive : /c/en/steam/n 
+Successors of node '/c/en/steam_locomotive':
+/c/en/locomotive/n
+/c/en/steam/n
+/c/en/steam_locomotive
 ✅ Query completed successfully.
-📌 Rows matched: 3 | Skipped: 1
-⏱️  Wall Time: 5.516875ms
-⚙️  CPU Time (User): 397µs | (Sys): 573µs
-🧠 Memory Used: 12.30 KB
+📌 Successors found: 3
+⏱️  Wall Time: 4.684708ms
+⚙️  CPU Time (User): 172µs | (Sys): 331µs
+🧠 Memory Used: 23.72 KB
 🧹 GC Pause: 0.00 ms
-📈 Throughput: 543.79 rows/sec
+📈 Throughput: 640.38 rows/sec

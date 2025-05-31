@@ -2,22 +2,21 @@
 Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
 ✅ Connected to Cassandra
 🔌 Creating the Session
+Node: Q1194480, Label: genre fiction
+Node: Q4263830, Label: literary form
+Node: Q17518870, Label: group of literary works
+Node: Q17537576, Label: creative work
+Node: Q2217301, Label: serial
+Node: Q1792379, Label: art genre
+Node: Q483394, Label: genre
+Node: Q621993, Label: literary class
+Node: Q1437361, Label: form
+Node: Q223393, Label: literary genre
+Node: Q47461344, Label: written work
 ✅ Grandchildren query completed successfully.
-Grandchildren: 
-Q621993 
-Q1437361 
-Q47461344 
-Q2217301 
-Q17537576 
-Q1194480 
-Q1792379 
-Q483394 
-Q223393 
-Q17518870 
-Q4263830 
 📌 Unique grandchildren of Q676: 11 | Skipped: 2
-⏱️  Wall Time: 10.205167ms
-⚙️  CPU Time (User): 310µs | (Sys): 641µs
-🧠 Memory Used: 40.20 KB
+⏱️  Wall Time: 52.98575ms
+⚙️  CPU Time (User): 879µs | (Sys): 1.649ms
+🧠 Memory Used: 87.75 KB
 🧹 GC Pause: 0.00 ms
-📈 Throughput: 1077.89 rows/sec
+📈 Throughput: 207.60 rows/sec

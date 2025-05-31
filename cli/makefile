@@ -34,15 +34,15 @@ query-five:
 	@$(OUTPUT) five -f="/c/en/spectrogram" >> $(RESULTS_DIR)/five.txt
 
 query-six:
-	@echo "Finding the successor of the given node"
+	@echo "Counting all neighbors of the given node"
 	@$(OUTPUT) six -f="/c/en/jar" >> $(RESULTS_DIR)/six.txt
 
 query-seven:
-	@echo "Finding the successor of the given node"
+	@echo "Finding all grandchildren of the given node"
 	@$(OUTPUT) seven -f="Q676" >> $(RESULTS_DIR)/seven.txt
 
 query-eight:
-	@echo "Finding the successor of the given node"
+	@echo "Finding all grandparents of the given node"
 	@$(OUTPUT) eight -f="/c/en/ms_dos" >> $(RESULTS_DIR)/eight.txt
 
 query-nine:
@@ -67,7 +67,7 @@ query-thirteen:
 
 query-fourteen:
 	@echo "Renaming the given node"
-	@$(OUTPUT) fourteen -o="/c/en/transportation_topic/n" -n="/c/en/movement_topic/n" >> $(RESULTS_DIR)/fourteen.txt
+	@$(OUTPUT) fourteen -o="/c/en/transportation_topic/n" -n="/c/en/newName" >> $(RESULTS_DIR)/fourteen.txt
 
 query-fifteen:
 	@echo "Finding similar nodes for given node"
