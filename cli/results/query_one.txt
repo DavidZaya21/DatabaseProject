@@ -1,0 +1,10 @@
+Failed to load .env file: open .env: no such file or directory
+Creating the Session
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+❌ Failed to create Cassandra session: gocql: unable to create session: unable to discover protocol version: dial tcp 127.0.0.1:9042: connect: connection refused
+Creating the Session
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+❌ Failed to create Cassandra session: gocql: unable to create session: unable to discover protocol version: dial tcp 127.0.0.1:9042: connect: connection refused
+Creating the Session

@@ -1,10 +1,11 @@
 package cassandra_client
 
 import (
+	"os"
+
 	"github.com/fatih/color"
 	"github.com/gocql/gocql"
 	"github.com/joho/godotenv"
-	"os"
 )
 
 var session *gocql.Session
@@ -12,7 +13,6 @@ var session *gocql.Session
 func ConnectionToCassandra() {
 	var err error
 
-	// Load .env file
 	if err = godotenv.Load(".env"); err != nil {
 		color.Red("Failed to load .env file: %s", err.Error())
 		return
