@@ -15,15 +15,15 @@ run-parse:
 
 query-one:
 	@echo "Finding the successor of the given node"
-	@$(OUTPUT) one -f="/c/en/steam_locomotive" >> $(RESULTS_DIR)/one.txt
+	@$(OUTPUT) one -f="/c/en/steam_locomotive" >> $(RESULTS_DIR)/query_one.txt
 
 query-two:
 	@echo "Counting the successor of the given node"
-	@$(OUTPUT) two -f="/c/en/value" >> $(RESULTS_DIR)/two.txt
+	@$(OUTPUT) two -f="/c/en/value" >> $(RESULTS_DIR)/query_two.txt
 
 query-three:
 	@echo "Finding the predecessors of the given node"
-	@$(OUTPUT) three -f="Q40157" >> $(RESULTS_DIR)/three.txt
+	@$(OUTPUT) three -f="Q40157" >> $(RESULTS_DIR)/query_three.txt
 
 query-four:
 	@echo "Counting all the predecessors of the given node"

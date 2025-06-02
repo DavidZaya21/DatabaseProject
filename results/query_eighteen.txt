@@ -1,0 +1,8 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Distant antonyms of /c/en/automate at distance 3:
+- /c/en/humanise (path: /c/en/automate -> /c/en/dehumanize -> /c/en/dehumanise -> /c/en/humanise)
+- /c/en/humanize (path: /c/en/automate -> /c/en/dehumanize -> /c/en/dehumanise -> /c/en/humanize)
+- /c/en/civilize (path: /c/en/automate -> /c/en/dehumanize -> /c/en/humanize -> /c/en/civilize)
+- /c/en/personify (path: /c/en/automate -> /c/en/dehumanize -> /c/en/humanize -> /c/en/personify)

@@ -1,0 +1,24 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+Direct predecessor: /c/en/dos/n
+Direct predecessor: /c/en/8.3/n
+Direct predecessor: /c/en/drive_letter/n
+Direct predecessor: /c/en/ms_dos
+Direct predecessor: /c/en/print_screen/n
+✅ Grandparents query completed successfully.
+Grandparents: 
+/c/en/dr_dos
+/c/en/ms_dos
+/c/en/pc_dos
+/c/en/dos/n
+/c/en/8.3/n
+/c/en/drive_letter/n
+/c/en/print_screen/n
+📌 Unique grandparents of /c/en/ms_dos: 7
+⏱️  Wall Time: 17.6405245s
+⚙️  CPU Time (User): 3.044ms | (Sys): 6.632ms
+🧠 Memory Used: 69.46 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 0.40 rows/sec

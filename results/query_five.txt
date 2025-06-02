@@ -1,0 +1,22 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+🔍 Querying successors...
+🔍 Querying predecessors...
+✅ Neighbor query completed successfully.
+📌 Total unique neighbors: 8 | Skipped: 0
+📋 Neighbors:
+/c/en/spectrograph/n 
+/c/en/voicegram/n 
+/c/en/spectrograms/n 
+/c/en/gram 
+/c/en/spectrograph 
+/c/en/sonogram/n 
+/c/en/hypnospectrogram 
+/c/en/scalogram/n 
+⏱️  Wall Time: 2.986681042s
+⚙️  CPU Time (User): 1.125ms | (Sys): 2.121ms
+🧠 Memory Used: 43.34 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 2.68 rows/sec

@@ -1,0 +1,14 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+Successors of /c/en/steam_locomotive : /c/en/locomotive/n 
+Successors of /c/en/steam_locomotive : /c/en/steam/n 
+Successors of /c/en/steam_locomotive : /c/en/steam/n 
+✅ Query completed successfully.
+📌 Rows matched: 3 | Skipped: 1
+⏱️  Wall Time: 7.080833ms
+⚙️  CPU Time (User): 421µs | (Sys): 837µs
+🧠 Memory Used: 25.64 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 423.68 rows/sec

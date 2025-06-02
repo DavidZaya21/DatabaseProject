@@ -15,10 +15,10 @@ import (
 )
 
 const (
-	filePath      = "/Users/davidzayar/Downloads/cskg.tsv"
+	filePath      = "/Users/swanhtet1aungphyo/Downloads/cskg.tsv"
 	batchSize     = 100
 	connectHost   = "127.0.0.1"
-	keyspaceName  = "fina_schema"
+	keyspaceName  = "final_schema"
 	retryAttempts = 5
 	retryDelay    = 3 * time.Second
 )

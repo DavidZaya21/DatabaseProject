@@ -1,5 +1,0 @@
-✅ .env file loaded
-Connecting to Cassandra at 127.0.0.1:9042, keyspace: fina_schema
-✅ Connected to Cassandra
-Shortest path length: 7
-Path: /c/en/uchuva -> /c/en/tomatillo/n -> /c/en/physalis -> /c/en/plant/n -> /c/en/slang -> /c/en/square/a -> /c/en/square_sail -> /c/en/square_sails/n

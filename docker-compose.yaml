@@ -1,23 +1,22 @@
 
+
 services:
   cassandra:
     image: cassandra:4.1
     container_name: cassandra-container
     ports:
-      - "9042:9042"
+      - "9042:9042"  # expose native transport port to host
     volumes:
       - cassandra-data:/var/lib/cassandra
-      - ./cassandra.yaml:/etc/cassandra/cassandra.yaml
+      - ./cassandra.yaml:/etc/cassandra/cassandra.yaml  # Optional if custom config is needed
     environment:
       - CASSANDRA_CLUSTER_NAME=Test Cluster
       - CASSANDRA_LISTEN_ADDRESS=auto
-      - CASSANDRA_BROADCAST_ADDRESS=localhost
+      - CASSANDRA_BROADCAST_ADDRESS=127.0.0.1
       - CASSANDRA_RPC_ADDRESS=0.0.0.0
-      - CASSANDRA_BROADCAST_RPC_ADDRESS=localhost
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
       - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - CASSANDRA_START_RPC=true
-
-
     networks:
       - app-network
     restart: always
