@@ -73,6 +73,21 @@ func QuerySevenAction() {
 		}
 	}
 
+	for child := range grandchildren {
+		var label string
+		query := fmt.Sprintf("SELECT label FROM node WHERE name = '%s';", child)
+		iter := session.Query(query).Iter()
+	
+		for iter.Scan(&label) {
+			fmt.Printf("Node: %s, Label: %s\n", child, label)
+		}
+	
+		if err := iter.Close(); err != nil {
+			log.Printf("Query error for child %s: %v", child, err)
+		}
+	}
+	
+
 	finalCount := len(grandchildren)
 
 	endTime := time.Now()
@@ -92,10 +107,10 @@ func QuerySevenAction() {
 
 	// Summary
 	color.Green("✅ Grandchildren query completed successfully.")
-	color.Green("Grandchildren: ")
-	for gc := range grandchildren {
-		color.Green("%s \n", gc)
-	}
+	// color.Green("Grandchildren: ")
+	// for gc := range grandchildren {
+	// 	color.Green("%s \n", gc)
+	// }
 	color.Cyan("📌 Unique grandchildren of %s: %d | Skipped: %d", node, finalCount, skipped)
 	color.Yellow("⏱️  Wall Time: %s", duration)
 	color.Yellow("⚙️  CPU Time (User): %s | (Sys): %s", cpuUserTime, cpuSysTime)

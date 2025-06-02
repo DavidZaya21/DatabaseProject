@@ -8,7 +8,7 @@ import (
 )
 
 var queries = []*cobra.Command{
-	QueryDummyCmd,
+	// QueryDummyCmd,
 	// EdgeBidirectionCmd,
 	QueryOneCmd,
 	QueryTwoCmd,

@@ -48,7 +48,7 @@ func QueryEightAction() {
 	iter := session.Query("SELECT from_node FROM edges WHERE to_node = ? ALLOW FILTERING", node).Iter()
 	var fromNode string
 	for iter.Scan(&fromNode) {
-		color.Green("Direct predecessor: %s", fromNode)
+		// color.Green("Direct predecessor: %s", fromNode)
 		directPredecessors[fromNode] = true
 	}
 	if err := iter.Close(); err != nil {

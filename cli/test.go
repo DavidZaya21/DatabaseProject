@@ -9,13 +9,13 @@ package main
 // 	// Add this import
 // )
 
-// // var EdgeBidirectionCmd = &cobra.Command{
-// // 	Use:   "edgeBidirection",
-// // 	Short: "Insert the edges_bidirectional table with undirected edges",
-// // 	Run: func(cmd *cobra.Command, args []string) {
-// // 		batchInsertBidirection()
-// // 	},
-// // }
+// // // var EdgeBidirectionCmd = &cobra.Command{
+// // // 	Use:   "edgeBidirection",
+// // // 	Short: "Insert the edges_bidirectional table with undirected edges",
+// // // 	Run: func(cmd *cobra.Command, args []string) {
+// // // 		batchInsertBidirection()
+// // // 	},
+// // // }
 
 // func batchInsertBidirection() {
 // 	session := cassandra_client.GetSession()
@@ -60,12 +60,4 @@ package main
 // 	}
 
 // 	if err := iter.Close(); err != nil {
-// 		log.Printf("Error closing iterator: %v", err)
-// 	}
-
-// 	fmt.Println("Bidirectional edges inserted successfully.")
-// }
-// func main() {
-// 	cassandra_client.ConnectionToCassandra()
-// 	batchInsertBidirection()
-// }
+// 		log.Printf("Error closing iterator: %v"

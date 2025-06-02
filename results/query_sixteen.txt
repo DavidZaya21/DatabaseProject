@@ -1,4 +1,0 @@
-✅ .env file loaded
-Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
-✅ Connected to Cassandra
-No path found between /c/en/uchuva and /c/en/square_sails/n

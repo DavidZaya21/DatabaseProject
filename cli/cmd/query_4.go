@@ -50,7 +50,7 @@ func QueryFourAction() {
 
 	for iter.Scan(&fromNode) {
 		//if !strings.EqualFold(fromNode, QueryFourNode) {
-		fmt.Printf("Predecessors: %s \n", fromNode)
+		// fmt.Printf("Predecessors: %s \n", fromNode)
 		uniqueMap[fromNode] = true
 		//} else {
 		//	skipped++
