@@ -1,0 +1,22 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+✅ Similar nodes = 13
+/c/en/act
+/c/en/emissions_test
+/c/en/emit
+/c/en/issue
+/c/en/reflection_nebula
+/c/en/stellar_nebula
+/c/en/solar_nebula
+/c/en/protoplanetary_nebula
+/c/en/emission_line
+/c/en/dark_nebula
+/c/en/preplanetary_nebula
+/c/en/diffuse_nebula
+/c/en/planetary_nebula
+⏱️  Wall Time: 2.76350425s
+⚙️  CPU Time (User): 2.018ms | (Sys): 2.456ms
+🧠 Memory Used: 64.52 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 4.70 ops/sec

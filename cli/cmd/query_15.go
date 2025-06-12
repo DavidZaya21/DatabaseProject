@@ -91,7 +91,7 @@ func QueryFifteenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(len(similarNodes)) / duration.Seconds()
-
+	logQueryTime(duration, "query_fifteen")
 	//// Print results
 	color.Green("✅ Similar nodes = %d", count)
 	for n := range similarNodes {

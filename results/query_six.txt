@@ -1,0 +1,13 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+🔍 Querying successors...
+🔍 Querying predecessors...
+✅ Neighbor query completed successfully.
+📌 Total unique neighbors: 373 | Skipped: 0
+⏱️  Wall Time: 1.507674916s
+⚙️  CPU Time (User): 1.012ms | (Sys): 1.336ms
+🧠 Memory Used: 89.18 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 247.40 rows/sec

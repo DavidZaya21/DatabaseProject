@@ -13,7 +13,7 @@ build:
 
 
 parse:
-	@$(OUTPAR)
+	@$(OUTPAR) /Users/swanhtet/Downloads/cskg.tsv
 
 query-one:
 	@echo "Finding the successor of the given node"

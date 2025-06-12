@@ -72,7 +72,7 @@ func QueryThirteenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(singleNeighborCount) / duration.Seconds()
-
+	logQueryTime(duration, "query_thirteen")
 	color.Green("✅ Query completed successfully.")
 	color.Cyan("📌 Nodes with exactly 1 unique neighbor: %d", singleNeighborCount)
 	color.Yellow("⏱️  Wall Time: %s", duration)

@@ -1,0 +1,22 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+Node: Q47461344, Label: written work
+Node: Q4263830, Label: literary form
+Node: Q621993, Label: literary class
+Node: Q1437361, Label: form
+Node: Q17537576, Label: creative work
+Node: Q1194480, Label: genre fiction
+Node: Q1792379, Label: art genre
+Node: Q483394, Label: genre
+Node: Q223393, Label: literary genre
+Node: Q17518870, Label: group of literary works
+Node: Q2217301, Label: serial
+✅ Grandchildren query completed successfully.
+📌 Unique grandchildren of Q676: 11 | Skipped: 2
+⏱️  Wall Time: 108.432417ms
+⚙️  CPU Time (User): 2.455ms | (Sys): 2.703ms
+🧠 Memory Used: 100.31 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 101.45 rows/sec

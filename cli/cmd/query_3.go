@@ -4,10 +4,8 @@ import (
 	"fmt"
 	"log"
 	"runtime"
-	"runtime/debug"
 	"syscall"
 	"time"
-
 	"github.com/DavidZayar/cli/cassandra_client"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
@@ -27,67 +25,60 @@ var (
 
 func QueryThreeAction() {
 	if QueryThreeNode == "" {
-		log.Fatal("❌ You must provide a --to_node value")
+		log.Fatal("You must provide a --to_node value")
 	}
 
-	query := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' allow filtering ;", QueryThreeNode)
-
-	color.Yellow("Creating the Session")
 	session := cassandra_client.GetSession()
 	defer session.Close()
 
-	var startTime = time.Now()
+	startTime := time.Now()
 	var rusageStart syscall.Rusage
-	_ = syscall.Getrusage(syscall.RUSAGE_SELF, &rusageStart)
-
+	syscall.Getrusage(syscall.RUSAGE_SELF, &rusageStart)
 	var memStart runtime.MemStats
 	runtime.ReadMemStats(&memStart)
 
+	query := fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' ALLOW FILTERING;", QueryThreeNode)
 	iter := session.Query(query).Iter()
 	var fromNode string
 	uniqueMap := make(map[string]bool)
+
 	for iter.Scan(&fromNode) {
-		// fmt.Printf("Predecessors: %s \n", fromNode)
 		uniqueMap[fromNode] = true
 	}
-	//for iter.Scan(&fromNode) {
-	//	if !strings.EqualFold(fromNode, queryThreeNode) {
-	//		color.Green(fmt.Sprintf("Successors of %s : %s ", queryThreeNode, fromNode))
-	//		count++
-	//	} else {
-	//		skipped++
-	//	}
-	//}
 
 	if err := iter.Close(); err != nil {
-		log.Fatalf("❌ Error reading results: %v", err)
+		log.Fatalf("Error reading results: %v", err)
 	}
 
-	for prede := range uniqueMap {
+	color.White("Predecessors of node '%s':", QueryThreeNode)
+	for predecessor := range uniqueMap {
 		var label string
-		query := fmt.Sprintf("SELECT label FROM node WHERE name = '%s';", prede)
-		iter := session.Query(query).Iter()
+		labelQuery := fmt.Sprintf("SELECT label FROM node WHERE name = '%s';", predecessor)
+		labelIter := session.Query(labelQuery).Iter()
 
-		for iter.Scan(&label) {
-			fmt.Printf("Node: %s, Label: %s\n", prede, label)
+		hasLabel := false
+		for labelIter.Scan(&label) {
+			color.Green("Node: %s, Label: %s", predecessor, label)
+			hasLabel = true
 		}
 
-		if err := iter.Close(); err != nil {
-			log.Printf("Query error for child %s: %v", prede, err)
+		if !hasLabel {
+			color.Green("Node: %s, Label: (no label found)", predecessor)
+		}
+
+		if err := labelIter.Close(); err != nil {
+			log.Printf("Warning: Query error for predecessor %s: %v", predecessor, err)
 		}
 	}
 
 	finalCount := len(uniqueMap)
 
-	// Post-query profiling
-	var endTime = time.Now()
+	endTime := time.Now()
 	var rusageEnd syscall.Rusage
-	_ = syscall.Getrusage(syscall.RUSAGE_SELF, &rusageEnd)
-
+	syscall.Getrusage(syscall.RUSAGE_SELF, &rusageEnd)
 	var memEnd runtime.MemStats
 	runtime.ReadMemStats(&memEnd)
 
-	// Metrics calculations
 	duration := endTime.Sub(startTime)
 	cpuUserTime := time.Duration(rusageEnd.Utime.Nano() - rusageStart.Utime.Nano())
 	cpuSysTime := time.Duration(rusageEnd.Stime.Nano() - rusageStart.Stime.Nano())
@@ -95,14 +86,13 @@ func QueryThreeAction() {
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(finalCount) / duration.Seconds()
 
-	// Results output
-	color.Green("✅ Query completed successfully.")
-	color.Cyan("📌 Unique predecessors (from_node): %d", finalCount)
-	color.Yellow("⏱️  Wall Time: %s", duration)
-	color.Yellow("⚙️  CPU Time (User): %s | (Sys): %s", cpuUserTime, cpuSysTime)
-	color.Magenta("🧠 Memory Used: %.2f KB", float64(memUsed)/1024)
-	color.Blue("🧹 GC Pause: %.2f ms", float64(gcPauseNs)/1e6)
-	color.Cyan("📈 Throughput: %.2f rows/sec", throughput)
+	logQueryTime(duration, "query_three")
 
-	debug.FreeOSMemory()
+	color.Green("\nQuery completed successfully")
+	color.Cyan("Unique predecessors (from_node): %d", finalCount)
+	color.Yellow("Wall Time: %s", duration)
+	color.Yellow("CPU Time (User): %s | (Sys): %s", cpuUserTime, cpuSysTime)
+	color.Magenta("Memory Used: %.2f KB", float64(memUsed)/1024)
+	color.Blue("GC Pause: %.2f ms", float64(gcPauseNs)/1e6)
+	color.Blue("Throughput: %.2f rows/sec", throughput)
 }

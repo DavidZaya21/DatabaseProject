@@ -78,7 +78,7 @@ func QueryFourAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(finalCount) / duration.Seconds()
-
+	logQueryTime(duration,"query_four")
 	color.Green("✅ Count completed successfully.")
 	color.Cyan("📌 Unique predecessors (from_node): %d", finalCount)
 	color.Yellow("⏱️  Wall Time: %s", duration)

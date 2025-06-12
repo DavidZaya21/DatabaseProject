@@ -124,7 +124,7 @@ func QueryFourteenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := 1.0 / duration.Seconds()
-
+	logQueryTime(duration, "query_fourteen")
 	color.Green("✅ Node renamed from %s to %s", QueryFourteenOldName, QueryFourteenNewName)
 	color.Yellow("⏱️  Wall Time: %s", duration)
 	color.Yellow("⚙️  CPU Time (User): %s | (Sys): %s", cpuUserTime, cpuSysTime)

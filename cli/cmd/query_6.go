@@ -93,7 +93,7 @@ func QuerySixAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(count) / duration.Seconds()
-
+	logQueryTime(duration, "query_six")
 	color.Green("✅ Neighbor query completed successfully.")
 	color.Cyan("📌 Total unique neighbors: %d | Skipped: %d", count, skipped)
 	color.Yellow("⏱️  Wall Time: %s", duration)

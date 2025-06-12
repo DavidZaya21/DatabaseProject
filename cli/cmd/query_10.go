@@ -71,7 +71,7 @@ func QueryTenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(totalCount) / duration.Seconds()
-
+	logQueryTime(duration, "query_ten")
 	color.Green("✅ Query completed successfully.")
 	color.Cyan("Nodes without successors: %d", totalCount)
 	color.Yellow("⏱️  Wall Time: %s", duration)

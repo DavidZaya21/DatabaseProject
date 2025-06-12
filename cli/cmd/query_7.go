@@ -104,7 +104,7 @@ func QuerySevenAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(finalCount) / duration.Seconds()
-
+	logQueryTime(duration, "query_seven")
 	// Summary
 	color.Green("✅ Grandchildren query completed successfully.")
 	// color.Green("Grandchildren: ")

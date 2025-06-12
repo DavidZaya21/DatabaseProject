@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"fmt"
 	"log"
 	"os"
 	"runtime"
@@ -15,7 +16,6 @@ import (
 )
 
 const (
-	filePath      = "/Users/swanhtet1aungphyo/Downloads/cskg.tsv"
 	batchSize     = 100
 	connectHost   = "127.0.0.1"
 	keyspaceName  = "final_schema"
@@ -36,8 +36,24 @@ type Edge struct {
 }
 
 func main() {
+	// Check command line arguments
+	if len(os.Args) != 2 {
+		fmt.Fprintf(os.Stderr, "Usage: %s <tsv-file-path>\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Example: %s /path/to/cskg.tsv\n", os.Args[0])
+		os.Exit(1)
+	}
+
+	filePath := os.Args[1]
+
+	// Validate file exists
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		color.Red("❌ File does not exist: %s", filePath)
+		os.Exit(1)
+	}
+
 	debug.SetGCPercent(500)
 	color.Green("🚀 Starting Cassandra loader...")
+	color.Yellow("📁 Using file: %s", filePath)
 
 	if err := connectCassandra(); err != nil {
 		color.Red("❌ Cassandra connection failed: %v", err)

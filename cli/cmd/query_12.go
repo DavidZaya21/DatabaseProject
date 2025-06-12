@@ -84,7 +84,7 @@ func QueryTwelveAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(len(neighbors)) / duration.Seconds()
-
+	logQueryTime(duration, "query_twelve")
 	// Output
 	color.Green("✅ Query completed successfully.")
 	color.Cyan("📌 Max unique neighbor count: %d", maxCount)

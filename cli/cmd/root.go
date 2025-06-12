@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
@@ -30,13 +29,46 @@ var queries = []*cobra.Command{
 	QueryEighteenCmd,
 }
 var rootCmd = &cobra.Command{
-	Use:   "cli",
-	Short: "cli is a simple command-line application",
-	Long:  `cli is a longer description of your application that can span multiple lines.`,
+	Use:   "dbcli",
+	Short: "dbcli is a command-line tool for querying and analyzing graph data",
+	Long: `dbcli is a command-line tool with various query commands to analyze graph data.
+
+Available commands and flags:
+
+  one         -f, --from_node       Find successors of a given node
+  two         -f, --from_node       Count successors of a given node
+  three       -f, --to_node         Find predecessors of a given node
+  four        -f, --to_node         Count predecessors of a given node
+  five        -f, --node            Find neighbors of a given node
+  six         -f, --node            Count neighbors of a given node
+  seven       -f, --node            Find grandchildren of a given node
+  eight       -f, --node            Find grandparents of a given node
+  nine                            Count all nodes in the graph (no flags)
+  ten                             Count nodes without successors (no flags)
+  eleven                          Count nodes without predecessors (no flags)
+  twelve                          Find the node with the most neighbors (no flags)
+  thirteen                        Count nodes with a single neighbor (no flags)
+  fourteen    -o, --old name
+               -n, --new name       Rename a given node
+  fifteen     -f, --node            Find similar nodes for a given node
+  sixteen     [source] [target]     Find shortest path between two nodes
+  seventeen   [node] [depth]        Find distant synonyms
+  eighteen    [node] [depth]        Find distant antonyms
+
+Examples:
+
+  dbcli one -f="/c/en/steam_locomotive"
+  dbcli fourteen -o="/c/en/transportation_topic/n" -n="/c/en/movement_topic/n"
+  dbcli sixteen "/c/en/uchuva" "/c/en/square_sails/n"
+  dbcli seventeen "/c/en/defeatable" 2
+
+Use "dbcli [command] --help" for detailed help on a command.
+`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Welcome to your Cobra CLI app!")
+		cmd.Help()
 	},
 }
+
 
 func Exec() {
 	if err := rootCmd.Execute(); err != nil {

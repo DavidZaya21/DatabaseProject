@@ -1,0 +1,11 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+🔌 Creating the Session
+✅ Node count query completed successfully.
+📌 Total nodes: 2160968
+⏱️  Wall Time: 7.858567833s
+⚙️  CPU Time (User): 340.984ms | (Sys): 108.148ms
+🧠 Memory Used: 1987.48 KB
+🧹 GC Pause: 3.14 ms
+📈 Throughput: 274982.42 rows/sec

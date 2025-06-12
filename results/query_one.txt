@@ -1,0 +1,28 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Successors of node '/c/en/steam_locomotive':
+/c/en/steam_locomotive
+/c/en/locomotive/n
+/c/en/steam/n
+
+Query completed successfully
+Successors found: 3
+Wall Time: 13.078875ms
+CPU Time (User): 327µs | (Sys): 393µs
+Memory Used: 24.78 KB
+Throughput: 229.38 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Successors of node '/c/en/steam_locomotive':
+/c/en/steam/n
+/c/en/steam_locomotive
+/c/en/locomotive/n
+
+Query completed successfully
+Successors found: 3
+Wall Time: 6.728291ms
+CPU Time (User): 373µs | (Sys): 623µs
+Memory Used: 23.95 KB
+Throughput: 445.88 rows/sec

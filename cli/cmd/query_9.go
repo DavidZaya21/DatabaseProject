@@ -60,7 +60,7 @@ func QueryNineAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(totalCount) / duration.Seconds()
-
+	logQueryTime(duration, "query_nine")
 	// Summary
 	color.Green("✅ Node count query completed successfully.")
 	color.Cyan("📌 Total nodes: %d", totalCount)

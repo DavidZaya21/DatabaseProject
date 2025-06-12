@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="@localhost" uuid="594f1f06-4a31-441f-95ef-80aa539461ce">
       <driver-ref>cassandra</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.ing.data.cassandra.jdbc.CassandraDriver</jdbc-driver>
+      <jdbc-driver>com.dbschema.CassandraJdbcDriver</jdbc-driver>
       <jdbc-url>jdbc:cassandra://localhost:9042</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
@@ -16,7 +16,7 @@
     <data-source source="LOCAL" name="@localhost [2]" uuid="fa4bf940-eac6-4603-80d5-e146f9a4d158">
       <driver-ref>cassandra</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.ing.data.cassandra.jdbc.CassandraDriver</jdbc-driver>
+      <jdbc-driver>com.dbschema.CassandraJdbcDriver</jdbc-driver>
       <jdbc-url>jdbc:cassandra://localhost:9042</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />

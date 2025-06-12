@@ -1,0 +1,55 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+✅ Count completed successfully.
+📌 Unique predecessors (from_node): 735
+⏱️  Wall Time: 1.609344917s
+⚙️  CPU Time (User): 867µs | (Sys): 1.184ms
+🧠 Memory Used: 129.20 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 456.71 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+✅ Count completed successfully.
+📌 Unique predecessors (from_node): 735
+⏱️  Wall Time: 1.530140583s
+⚙️  CPU Time (User): 907µs | (Sys): 1.304ms
+🧠 Memory Used: 126.99 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 480.35 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+✅ Count completed successfully.
+📌 Unique predecessors (from_node): 735
+⏱️  Wall Time: 1.488079875s
+⚙️  CPU Time (User): 969µs | (Sys): 1.119ms
+🧠 Memory Used: 127.24 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 493.93 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+✅ Count completed successfully.
+📌 Unique predecessors (from_node): 735
+⏱️  Wall Time: 1.565493083s
+⚙️  CPU Time (User): 1.117ms | (Sys): 1.178ms
+🧠 Memory Used: 127.10 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 469.50 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Creating the Session
+✅ Count completed successfully.
+📌 Unique predecessors (from_node): 735
+⏱️  Wall Time: 1.495943834s
+⚙️  CPU Time (User): 864µs | (Sys): 1.015ms
+🧠 Memory Used: 127.77 KB
+🧹 GC Pause: 0.00 ms
+📈 Throughput: 491.33 rows/sec

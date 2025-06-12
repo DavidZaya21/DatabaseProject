@@ -1,0 +1,20 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Query completed successfully
+Unique successors: 177 | Skipped: 0
+Wall Time: 10.012458ms
+CPU Time - User: 331µs | Sys: 391µs
+Memory Used: 35.88 KB
+GC Pause Total: 0.00 ms
+Throughput: 17677.98 unique nodes/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Query completed successfully
+Unique successors: 177 | Skipped: 0
+Wall Time: 6.3085ms
+CPU Time - User: 639µs | Sys: 916µs
+Memory Used: 52.94 KB
+GC Pause Total: 0.00 ms
+Throughput: 28057.38 unique nodes/sec

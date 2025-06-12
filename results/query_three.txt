@@ -1,0 +1,34 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Predecessors of node 'Q40157':
+Node: Q119306, Label: lava lake
+Node: Q10536135, Label: the floor is lava
+Node: Q839679, Label: lava lamp
+Node: Q42278, Label: magma
+Node: Q12047003, Label: primary magma
+
+Query completed successfully
+Unique predecessors (from_node): 5
+Wall Time: 2.745480125s
+CPU Time (User): 2.391ms | (Sys): 3.888ms
+Memory Used: 63.95 KB
+GC Pause: 0.00 ms
+Throughput: 1.82 rows/sec
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+Predecessors of node 'Q40157':
+Node: Q839679, Label: lava lamp
+Node: Q42278, Label: magma
+Node: Q12047003, Label: primary magma
+Node: Q119306, Label: lava lake
+Node: Q10536135, Label: the floor is lava
+
+Query completed successfully
+Unique predecessors (from_node): 5
+Wall Time: 1.916952875s
+CPU Time (User): 2.131ms | (Sys): 3.965ms
+Memory Used: 58.42 KB
+GC Pause: 0.00 ms
+Throughput: 2.61 rows/sec

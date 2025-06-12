@@ -98,7 +98,6 @@ clean: clean-results
 	@echo "Cleaning binary..."
 	@rm -f $(OUTPUT)
 
-# Show results summary
 show-results:
 	@echo "Results Summary:"
 	@echo "================"
@@ -110,5 +109,4 @@ show-results:
 		fi; \
 	done
 
-# Declare phony targets
 .PHONY: build run-parse query-one query-two query-three query-four query-five query-six query-seven query-eight query-nine query-ten query-eleven query-twelve query-thirteen query-fourteen query-fifteen query-sixteen query-seventeen query-eighteen run-all clean-results clean show-results

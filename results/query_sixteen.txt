@@ -1,0 +1,9 @@
+✅ .env file loaded
+Connecting to Cassandra at 127.0.0.1:9042, keyspace: final_schema
+✅ Connected to Cassandra
+❌ No path found between /c/en/uchuva and /c/en/square_sails/n
+⏱️  Wall Time: 6.705042ms
+⚙️  CPU Time (User): 650µs | (Sys): 788µs
+🧠 Memory Used: 25.70 KB
+🧹 GC Pause: 0.00 ms
+📈 Nodes Visited: 1 | Throughput: 149.14 nodes/sec

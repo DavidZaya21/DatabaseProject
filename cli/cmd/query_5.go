@@ -26,7 +26,6 @@ var (
 )
 
 func QueryFiveAction() {
-	// TODO: implement query 5
 	if QueryFiveNode == "" {
 		log.Fatal("❌ You must provide a --node value")
 	}
@@ -61,7 +60,6 @@ func QueryFiveAction() {
 	if err := succIter.Close(); err != nil {
 		log.Fatalf("❌ Error reading successors: %v", err)
 	}
-
 	color.Cyan("🔍 Querying predecessors...")
 	predIter := session.Query(fmt.Sprintf("SELECT from_node FROM edges WHERE to_node = '%s' ALLOW FILTERING;", QueryFiveNode)).Iter()
 	var fromNode string
@@ -93,7 +91,7 @@ func QueryFiveAction() {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(count) / duration.Seconds()
-
+	logQueryTime(duration, "query_five")
 	color.Green("✅ Neighbor query completed successfully.")
 	color.Cyan("📌 Total unique neighbors: %d | Skipped: %d", count, skipped)
 	color.Green("📋 Neighbors:")

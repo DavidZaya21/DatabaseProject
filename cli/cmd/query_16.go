@@ -61,7 +61,7 @@ func QuerySixteenAction(fromNode, toNode string) {
 	memUsed := memEnd.Alloc - memStart.Alloc
 	gcPauseNs := memEnd.PauseTotalNs - memStart.PauseTotalNs
 	throughput := float64(nodesVisited) / duration.Seconds()
-
+	logQueryTime(duration, "query_sixteen")
 	// Output results
 	if len(path) == 0 {
 		color.Red("❌ No path found between %s and %s", fromNode, toNode)
